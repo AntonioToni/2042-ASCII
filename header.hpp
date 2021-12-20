@@ -11,6 +11,5 @@ class Board
         Board(); //constructor declaration
         ~Board(); //destructor
         void print();
+        void null();
 };
-
-

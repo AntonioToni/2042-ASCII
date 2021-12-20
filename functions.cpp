@@ -29,3 +29,14 @@ void Board::print()
         cout << endl << endl; //double so it's bigger
     }
 }
+
+void Board::null()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; i < 4; j++)
+        {
+            matrix[i][j] = 0;
+        }
+    }
+}
