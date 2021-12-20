@@ -1,5 +1,4 @@
 #include "header.hpp"
-#include <cstdio>
 
 int main()
 {
