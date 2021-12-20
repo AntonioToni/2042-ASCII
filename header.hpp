@@ -1,6 +1,7 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
+#include <Windows.h>
 
 using namespace std;
 
@@ -14,4 +15,5 @@ class Board
         void zero();
         void print();
         void generate();
+        bool checkingame();
 };
