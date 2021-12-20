@@ -6,7 +6,5 @@ int main()
     Board b;
     b.null();
     b.print();
-    getchar();
-    int x;
-    cin >> x;
+    system("pause");
 }

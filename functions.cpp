@@ -22,9 +22,9 @@ void Board::print()
 {
     for (int i = 0; i < 4; i++)
     {
-        for (int j = 0; i < 4; j++)
+        for (int j = 0; j < 4; j++)
         {
-            cout << matrix[i][j] << " ";
+            cout << matrix[i][j] << "   ";
         }
         cout << endl << endl; //double so it's bigger
     }
@@ -34,7 +34,7 @@ void Board::null()
 {
     for (int i = 0; i < 4; i++)
     {
-        for (int j = 0; i < 4; j++)
+        for (int j = 0; j < 4; j++)
         {
             matrix[i][j] = 0;
         }

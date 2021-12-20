@@ -10,6 +10,6 @@ class Board
         int **matrix;
         Board(); //constructor declaration
         ~Board(); //destructor
-        void print();
         void null();
+        void print();
 };
