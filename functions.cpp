@@ -26,7 +26,7 @@ void Board::print()
         {
             cout << matrix[i][j] << "   ";
         }
-        cout << endl << endl; //double so it's bigger
+        cout << endl << endl;
     }
 }
 
@@ -59,5 +59,28 @@ void Board::generate()
     else
     {
         matrix[x][y] = 4;
+    }
+}
+
+bool Board::checkingame()
+{
+    int cnt = 0;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (matrix[i][j] == 0)
+            {
+                cnt++;
+            }
+        }
+    }
+    if (cnt == 0)
+    {
+        return FALSE;
+    }
+    else
+    {
+        return TRUE;
     }
 }
