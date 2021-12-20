@@ -30,7 +30,7 @@ void Board::print()
     }
 }
 
-void Board::null()
+void Board::zero()
 {
     for (int i = 0; i < 4; i++)
     {
@@ -38,5 +38,26 @@ void Board::null()
         {
             matrix[i][j] = 0;
         }
+    }
+}
+
+void Board::generate()
+{
+    int rnd = rand() % 5;
+    int x;
+    int y;
+    do
+    {
+        x = rand() % 4;
+        y = rand() % 4;
+    } while (matrix[x][y] != 0);
+    
+    if (rnd <= 3)
+    {
+        matrix[x][y] = 2;
+    }
+    else
+    {
+        matrix[x][y] = 4;
     }
 }

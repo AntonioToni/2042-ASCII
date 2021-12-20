@@ -8,8 +8,10 @@ class Board
 {
     public:
         int **matrix;
+        bool ingame;
         Board(); //constructor declaration
-        ~Board(); //destructor
-        void null();
+        ~Board(); //destructor declaration
+        void zero();
         void print();
+        void generate();
 };

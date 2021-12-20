@@ -3,8 +3,15 @@
 
 int main()
 {
+    srand(time(0));
     Board b;
-    b.null();
+    b.zero();
+    b.generate();
+    b.generate();
+    /*while(b.ingame)
+    {
+
+    }*/
     b.print();
     system("pause");
 }
