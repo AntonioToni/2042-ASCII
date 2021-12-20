@@ -7,10 +7,15 @@ int main()
     b.zero();
     b.generate();
     b.generate();
-    /*while(b.ingame)
+    while(b.ingame)
     {
-
-    }*/
+        b.print();
+        if(GetKeyState('A'))
+        {
+            b.moveleft();
+        }
+        Sleep(200);
+    }
     b.print();
     system("pause");
 }

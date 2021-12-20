@@ -20,6 +20,7 @@ Board::~Board()
 
 void Board::print()
 {
+    system("CLS");
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
@@ -84,3 +85,34 @@ bool Board::checkingame()
         return TRUE;
     }
 }
+
+void Board::moveleft()
+{
+    int jj;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 1; j < 4; j++)
+        {
+            if (matrix[i][j] != 0)
+            {
+                jj = j;
+                while(jj != 0)
+                {
+                    if(matrix[i][jj-1] == matrix[i][jj])
+                    {
+                        matrix[i][jj-1] = (matrix[i][jj] * 2);
+                        matrix[i][jj] = 0;
+                        jj--;
+                    }
+                    else if(matrix[i][jj-1] == 0)
+                    {
+                        matrix[i][jj-1] = matrix[i][jj];
+                        matrix[i][jj] = 0;
+                        jj--;
+                    }
+                }
+            }
+        }
+    }
+}
+
