@@ -28,8 +28,11 @@ int main()
         {
             b.moveright();
         }
-        b.generate();
-        b.generate();
+        if (ch == 'a' || ch == 's' || ch == 'w' || ch == 'd')
+        {
+            b.generate();
+            b.generate();
+        }
     }
     b.print();
     system("pause");
