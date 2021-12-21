@@ -1,4 +1,4 @@
-#include "functions.cpp"
+#include "header.hpp"
 
 int main()
 {
@@ -8,17 +8,21 @@ int main()
     b.generate();
     b.generate();
     char ch = NULL;
-    while(b.checkingame())
+    while (b.checkingame())
     {
         b.print();
         ch = getch();
-        if(ch == 'a')
+        if (ch == 'a')
         {
             b.moveleft();
         }
-        else if(ch == 'w')
+        else if (ch == 'w')
         {
             b.moveup();
+        }
+        else if (ch == 's')
+        {
+            b.movedown();
         }
         b.generate();
         b.generate();
