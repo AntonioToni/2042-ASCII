@@ -63,7 +63,7 @@ void Board::generate()
     }
 }
 
-bool Board::checkingame()
+bool Board::checkingame() //needs fixing
 {
     int cnt = 0;
     for (int i = 0; i < 4; i++)
@@ -123,9 +123,9 @@ void Board::moveleft()
 void Board::moveup()
 {
     int ii;
-    for (int i = 1; i < 4; i++)
+    for (int i = 1; i < 4; i++) //rows
     {
-        for (int j = 0; j < 4; j++)
+        for (int j = 0; j < 4; j++) //cols
         {
             if (matrix[i][j] != 0)
             {
@@ -143,6 +143,40 @@ void Board::moveup()
                         matrix[ii-1][j] = matrix[ii][j];
                         matrix[ii][j] = 0;
                         ii--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void Board::movedown()
+{
+    int ii;
+    for (int i = 3; i >= 0; i--) //rows
+    {
+        for (int j = 0; j < 4; j++) //cols
+        {
+            if (matrix[i][j] != 0)
+            {
+                ii = i;
+                while(ii != 3)
+                {
+                    if(matrix[ii+1][j] == matrix[ii][j])
+                    {
+                        matrix[ii+1][j] = (matrix[ii][j] * 2);
+                        matrix[ii][j] = 0;
+                        break;
+                    }
+                    else if(matrix[ii+1][j] == 0)
+                    {
+                        matrix[ii+1][j] = matrix[ii][j];
+                        matrix[ii][j] = 0;
+                        ii++;
                     }
                     else
                     {
