@@ -27,7 +27,7 @@ void Board::print()
         {
             cout << matrix[i][j] << "\t";
         }
-        cout << endl << endl << endl;
+        cout << endl << endl << endl << endl;
     }
 }
 
@@ -63,7 +63,7 @@ void Board::generate()
     }
 }
 
-bool Board::checkingame() //needs fixing
+bool Board::checkingame()
 {
     int cnt = 0;
     for (int i = 0; i < 4; i++)
@@ -78,12 +78,46 @@ bool Board::checkingame() //needs fixing
     }
     if (cnt == 0)
     {
-        return FALSE;
+        if (checkmove() == FALSE)
+        {
+            return FALSE;
+        }
     }
-    else
+    return TRUE;
+}
+
+bool Board::checkmove()
+{
+    for (int i = 1; i < 3; i++)
+    {
+        for (int j = 1; j < 3; j++)
+        {
+            if (matrix[i][j] != 0)
+            {
+                if (matrix[i][j] == matrix[i-1][j] || matrix[i][j] == matrix[i][j-1] || matrix[i][j] == matrix[i+1][j] || matrix[i][j] == matrix[i][j+1])
+                {
+                    return TRUE;
+                }
+            }
+        }
+    }
+    if (matrix[0][0] == matrix[1][0] != 0 || matrix[0][0] == matrix[0][1] != 0)
     {
         return TRUE;
     }
+    else if(matrix[3][0] == matrix[2][0] != 0 || matrix[3][0] == matrix[3][1] != 0)
+    {
+        return TRUE;
+    }
+    else if(matrix[3][3] == matrix[2][3] != 0 || matrix[3][3] == matrix[3][2] != 0)
+    {
+        return TRUE;
+    }
+    else if(matrix[0][3] == matrix[1][3] != 0 || matrix[0][3] == matrix[0][2] != 0)
+    {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 void Board::moveleft()
@@ -212,6 +246,7 @@ void Board::movedown()
                         matrix[ii+1][j] = matrix[ii][j];
                         matrix[ii][j] = 0;
                         ii++;
+                        Sleep(200);
                     }
                     else
                     {
