@@ -25,9 +25,9 @@ void Board::print()
     {
         for (int j = 0; j < 4; j++)
         {
-            cout << matrix[i][j] << "   ";
+            cout << matrix[i][j] << "\t";
         }
-        cout << endl << endl;
+        cout << endl << endl << endl;
     }
 }
 
@@ -102,7 +102,7 @@ void Board::moveleft()
                     {
                         matrix[i][jj-1] = (matrix[i][jj] * 2);
                         matrix[i][jj] = 0;
-                        jj--;
+                        break;
                     }
                     else if(matrix[i][jj-1] == 0)
                     {
@@ -110,9 +110,46 @@ void Board::moveleft()
                         matrix[i][jj] = 0;
                         jj--;
                     }
+                    else
+                    {
+                        break;
+                    }
                 }
             }
         }
     }
 }
 
+void Board::moveup()
+{
+    int ii;
+    for (int i = 1; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (matrix[i][j] != 0)
+            {
+                ii = i;
+                while(ii != 0)
+                {
+                    if(matrix[ii-1][j] == matrix[ii][j])
+                    {
+                        matrix[ii-1][j] = (matrix[ii][j] * 2);
+                        matrix[ii][j] = 0;
+                        break;
+                    }
+                    else if(matrix[ii-1][j] == 0)
+                    {
+                        matrix[ii-1][j] = matrix[ii][j];
+                        matrix[ii][j] = 0;
+                        ii--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
