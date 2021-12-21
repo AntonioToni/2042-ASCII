@@ -1,4 +1,4 @@
-#include "header.hpp"
+#include "functions.cpp"
 
 int main()
 {
@@ -7,14 +7,21 @@ int main()
     b.zero();
     b.generate();
     b.generate();
-    while(b.ingame)
+    char ch = NULL;
+    while(b.checkingame())
     {
         b.print();
-        if(GetKeyState('A'))
+        ch = getch();
+        if(ch == 'a')
         {
             b.moveleft();
         }
-        Sleep(200);
+        else if(ch == 'w')
+        {
+            b.moveup();
+        }
+        b.generate();
+        b.generate();
     }
     b.print();
     system("pause");
