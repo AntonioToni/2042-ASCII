@@ -21,4 +21,5 @@ class Board
         void moveleft();
         void moveup();
         void movedown();
+        void moveright();
 };
