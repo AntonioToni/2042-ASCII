@@ -31,7 +31,6 @@ int main()
         if (ch == 'a' || ch == 's' || ch == 'w' || ch == 'd')
         {
             b.generate();
-            b.generate();
         }
     }
     b.print();
