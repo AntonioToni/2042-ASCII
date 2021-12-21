@@ -24,6 +24,10 @@ int main()
         {
             b.movedown();
         }
+        else if (ch == 'd')
+        {
+            b.moveright();
+        }
         b.generate();
         b.generate();
     }
