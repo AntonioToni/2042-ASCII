@@ -17,6 +17,7 @@ class Board
         void print();
         void generate();
         bool checkingame();
+        bool checkmove();
         //controls
         void moveleft();
         void moveup();
