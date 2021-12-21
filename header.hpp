@@ -1,7 +1,8 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
-#include <Windows.h>
+#include <conio.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -17,4 +18,5 @@ class Board
         void generate();
         bool checkingame();
         void moveleft();
+        void moveup();
 };
