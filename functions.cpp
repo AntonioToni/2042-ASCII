@@ -120,6 +120,41 @@ void Board::moveleft()
     }
 }
 
+void Board::moveright()
+{
+    int jj;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 2; j >= 0; j--)
+        {
+            if (matrix[i][j] != 0)
+            {
+                jj = j;
+                while(jj != 3)
+                {
+                    if(matrix[i][jj+1] == matrix[i][jj])
+                    {
+                        matrix[i][jj+1] = (matrix[i][jj] * 2);
+                        matrix[i][jj] = 0;
+                        break;
+                    }
+                    else if(matrix[i][jj+1] == 0)
+                    {
+                        matrix[i][jj+1] = matrix[i][jj];
+                        matrix[i][jj] = 0;
+                        jj++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 void Board::moveup()
 {
     int ii;
