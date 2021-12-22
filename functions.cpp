@@ -21,46 +21,78 @@ Board::~Board()
 void Board::print()
 {
     system("CLS");
-    for (int i = 0; i < 65; i++)
+    int gridwidth = 65;
+
+    char vertline  = (char)186; // ║
+    char horizline = (char)205; // ═
+    char tlcorner  = (char)201; // ╔
+    char trcorner  = (char)187; // ╗
+    char blcorner  = (char)200; // ╚
+    char brcorner  = (char)188; // ╝
+    char tjundown  = (char)203; // ╦
+    char tjunup    = (char)202; // ╩
+    char tjunright = (char)204; // ╠
+    char tjunleft  = (char)185; // ╣
+    char junction  = (char)206; // ╬
+
+    cout << tlcorner;
+    for (int i = 1; i < gridwidth - 1; i++)
     {
-        cout << "-";
+        if (i % 16 == 0) {
+            cout << tjundown;
+        } else {
+            cout << horizline;
+        }
     }
-    cout << endl << "|\t\t|\t\t|\t\t|\t\t|" << endl;
+    cout << trcorner;
+
+    cout << endl << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << endl;
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
         {
             if (matrix[i][j] != 0)
             {
-                cout << "|\t" << matrix[i][j] << "\t";
+                cout << vertline << "\t" << matrix[i][j] << "\t";
             }
             else
             {
-                cout << "|\t\t";
+                cout << vertline << "\t\t";
             }
         }
-        cout << "|" << endl <<"|\t\t|\t\t|\t\t|\t\t|"<< endl;
+        cout << vertline << endl;
+        cout << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << endl;
         if (i != 3)
         {
-            for (int i = 0; i < 65; i++)
+            cout << tjunright;
+            for (int i = 1; i < gridwidth - 1; i++)
             {
+                // Check for intersect
                 if (i % 16 == 0)
                 {
-                    cout << "|";
+                    cout << junction;
                 }
                 else
                 {
-                    cout << "-";
+                    cout << horizline;
                 }
             }
-            cout << endl << "|\t\t|\t\t|\t\t|\t\t|" << endl;
+            cout << tjunleft << endl;
+            cout << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "" << endl;
         }
         else
         {
-            for (int i = 0; i < 65; i++)
+            // Draw last line
+            cout << blcorner;
+            for (int i = 1; i < gridwidth-1; i++)
             {
-                cout << "-";
+                if (i % 16 == 0) {
+                    cout << tjunup;
+                } else {
+                    cout << horizline;
+                }
             }
+            cout << brcorner;
         }
     }
     cout << endl; //making cursor blink in next line
