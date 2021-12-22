@@ -120,6 +120,48 @@ bool Board::checkmove()
     return FALSE;
 }
 
+bool Board::checkmovepossible(char ch)
+{
+    for (int i = 0; i <= 3; i++)
+    {
+        for (int j = 0; j <= 3; j++)
+        {
+            if (matrix[i][j] != 0)
+            {
+                if(ch == 'd' && j != 3)
+                {
+                    if (matrix[i][j] == matrix[i][j+1] || matrix[i][j+1] == 0)
+                    {
+                        return TRUE;
+                    }
+                }
+                else if(ch == 'a' && j != 0)
+                {
+                    if (matrix[i][j] == matrix[i][j-1] || matrix[i][j-1] == 0)
+                    {
+                        return TRUE;
+                    }
+                }
+                else if(ch == 's' && i != 3)
+                {
+                    if (matrix[i][j] == matrix[i+1][j] || matrix[i+1][j] == 0)
+                    {
+                        return TRUE;
+                    }
+                }
+                else if(ch == 'w' && i != 0)
+                {
+                    if (matrix[i][j] == matrix[i-1][j] || matrix[i-1][j] == 0)
+                    {
+                        return TRUE;
+                    }
+                }
+            }
+        }
+    }
+    return FALSE;
+}
+
 void Board::moveleft()
 {
     int jj;
@@ -246,7 +288,6 @@ void Board::movedown()
                         matrix[ii+1][j] = matrix[ii][j];
                         matrix[ii][j] = 0;
                         ii++;
-                        Sleep(200);
                     }
                     else
                     {
