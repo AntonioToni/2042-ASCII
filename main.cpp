@@ -7,7 +7,7 @@ int main()
     b.zero();
     b.generate();
     b.generate();
-    char ch = NULL;
+    char ch = 0;
     while (b.checkingame())
     {
         b.print();
