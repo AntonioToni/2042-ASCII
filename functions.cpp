@@ -21,14 +21,49 @@ Board::~Board()
 void Board::print()
 {
     system("CLS");
+    for (int i = 0; i < 65; i++)
+    {
+        cout << "-";
+    }
+    cout << endl << "|\t\t|\t\t|\t\t|\t\t|" << endl;
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
         {
-            cout << matrix[i][j] << "\t";
+            if (matrix[i][j] != 0)
+            {
+                cout << "|\t" << matrix[i][j] << "\t";
+            }
+            else
+            {
+                cout << "|\t\t";
+            }
         }
-        cout << endl << endl << endl << endl;
+        cout << "|" << endl <<"|\t\t|\t\t|\t\t|\t\t|"<< endl;
+        if (i != 3)
+        {
+            for (int i = 0; i < 65; i++)
+            {
+                if (i % 16 == 0)
+                {
+                    cout << "|";
+                }
+                else
+                {
+                    cout << "-";
+                }
+            }
+            cout << endl << "|\t\t|\t\t|\t\t|\t\t|" << endl;
+        }
+        else
+        {
+            for (int i = 0; i < 65; i++)
+            {
+                cout << "-";
+            }
+        }
     }
+    cout << endl; //making cursor blink in next line
 }
 
 void Board::zero()
