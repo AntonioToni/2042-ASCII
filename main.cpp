@@ -12,25 +12,28 @@ int main()
     {
         b.print();
         ch = getch();
-        if (ch == 'a')
+        if(b.checkmovepossible(ch))
         {
-            b.moveleft();
-        }
-        else if (ch == 'w')
-        {
-            b.moveup();
-        }
-        else if (ch == 's')
-        {
-            b.movedown();
-        }
-        else if (ch == 'd')
-        {
-            b.moveright();
-        }
-        if (ch == 'a' || ch == 's' || ch == 'w' || ch == 'd')
-        {
-            b.generate();
+            if (ch == 'a')
+            {
+                b.moveleft();
+            }
+            else if (ch == 'w')
+            {
+                b.moveup();
+            }
+            else if (ch == 's')
+            {
+                b.movedown();
+            }
+            else if (ch == 'd')
+            {
+                b.moveright();
+            }
+            if (ch == 'a' || ch == 's' || ch == 'w' || ch == 'd')
+            {
+                b.generate();
+            }
         }
     }
     b.print();
