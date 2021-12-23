@@ -19,9 +19,13 @@ class Board
         bool checkingame();
         bool checkmove();
         bool checkmovepossible(char ch);
+        bool checkwinlose();
+        bool winscreen();
+        void losescreen();
         //controls
         void moveleft();
         void moveup();
         void movedown();
         void moveright();
+        void move(char ch);
 };

@@ -35,7 +35,16 @@ int main()
                 b.generate();
             }
         }
+        if (b.checkwinlose())
+        {
+            b.print();
+            if (b.winscreen()==FALSE)
+            {
+                break;
+            }
+        }
     }
     b.print();
+    b.losescreen();
     system("pause");
 }

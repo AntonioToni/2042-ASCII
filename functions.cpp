@@ -187,6 +187,41 @@ bool Board::checkmove()
     return FALSE;
 }
 
+bool Board::checkwinlose()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (matrix[i][j] == 2048)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool Board::winscreen()
+{
+    char ch;
+    cout << endl << "\t You won!" << endl;
+    cin >> ch;
+    if (ch == 'y')
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+void Board::losescreen()
+{
+    cout << endl << "\t GAME OVER" << endl << endl;
+}
+
 bool Board::checkmovepossible(char ch)
 {
     for (int i = 0; i <= 3; i++)
