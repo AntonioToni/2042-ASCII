@@ -204,11 +204,17 @@ bool Board::checkwinlose()
 
 bool Board::winscreen()
 {
+    if (end == TRUE)
+    {
+        return TRUE;
+    }
     char ch;
-    cout << endl << "\t You won!" << endl;
+    cout << endl << "\t Y O U    W I N" << endl << endl;
+    cout << endl << "Continue playing ( Y / N )? ";
     cin >> ch;
     if (ch == 'y')
     {
+        end = TRUE;
         return TRUE;
     }
     else
@@ -219,7 +225,7 @@ bool Board::winscreen()
 
 void Board::losescreen()
 {
-    cout << endl << "\t GAME OVER" << endl << endl;
+    cout << endl << "\t G A M E    O V E R" << endl << endl;
 }
 
 bool Board::checkmovepossible(char ch)

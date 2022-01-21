@@ -9,6 +9,7 @@ using namespace std;
 class Board
 {
     public:
+        int end = FALSE;
         int **matrix;
         bool ingame;
         Board(); //constructor declaration
