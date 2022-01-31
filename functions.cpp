@@ -44,7 +44,7 @@ void Board::print()
             cout << horizline;
         }
     }
-    cout << trcorner;
+    cout << trcorner << "\tScore: " << score;
 
     cout << endl << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << endl;
     for (int i = 0; i < 4; i++)
@@ -284,6 +284,7 @@ void Board::moveleft()
                 {
                     if(matrix[i][jj-1] == matrix[i][jj])
                     {
+                        score+= (matrix[i][jj]*2);
                         matrix[i][jj-1] = (matrix[i][jj] * 2);
                         matrix[i][jj] = 0;
                         break;
@@ -318,6 +319,7 @@ void Board::moveright()
                 {
                     if(matrix[i][jj+1] == matrix[i][jj])
                     {
+                        score+= (matrix[i][jj]*2);
                         matrix[i][jj+1] = (matrix[i][jj] * 2);
                         matrix[i][jj] = 0;
                         break;
@@ -353,6 +355,7 @@ void Board::moveup()
                 {
                     if(matrix[ii-1][j] == matrix[ii][j])
                     {
+                        score+= (matrix[ii][j]*2);
                         matrix[ii-1][j] = (matrix[ii][j] * 2);
                         matrix[ii][j] = 0;
                         break;
@@ -387,6 +390,7 @@ void Board::movedown()
                 {
                     if(matrix[ii+1][j] == matrix[ii][j])
                     {
+                        score+= (matrix[ii][j]*2);
                         matrix[ii+1][j] = (matrix[ii][j] * 2);
                         matrix[ii][j] = 0;
                         break;
