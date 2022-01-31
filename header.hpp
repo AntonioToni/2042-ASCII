@@ -8,10 +8,12 @@ using namespace std;
 
 class Board
 {
-    public:
+    private:
+        int score = 0;
         int end = FALSE;
         int **matrix;
         bool ingame;
+    public:
         Board(); //constructor declaration
         ~Board(); //destructor declaration
         void zero();
@@ -28,5 +30,4 @@ class Board
         void moveup();
         void movedown();
         void moveright();
-        void move(char ch);
 };
