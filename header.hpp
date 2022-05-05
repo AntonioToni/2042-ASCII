@@ -31,3 +31,5 @@ class Board
         void movedown();
         void moveright();
 };
+
+void ShowConsoleCursor(bool showFlag);

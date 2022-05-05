@@ -47,6 +47,7 @@ void Board::print()
     cout << trcorner << "\tScore: " << score;
 
     cout << endl << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << endl;
+    cout << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << endl;
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
@@ -61,6 +62,7 @@ void Board::print()
             }
         }
         cout << vertline << endl;
+        cout << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << endl;
         cout << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << endl;
         if (i != 3)
         {
@@ -78,6 +80,7 @@ void Board::print()
                 }
             }
             cout << tjunleft << endl;
+            cout << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "" << endl;
             cout << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "\t\t" << vertline << "" << endl;
         }
         else
@@ -409,4 +412,15 @@ void Board::movedown()
             }
         }
     }
+}
+
+void ShowConsoleCursor(bool showFlag)
+{
+    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    CONSOLE_CURSOR_INFO     cursorInfo;
+
+    GetConsoleCursorInfo(out, &cursorInfo);
+    cursorInfo.bVisible = showFlag; // set the cursor visibility
+    SetConsoleCursorInfo(out, &cursorInfo);
 }

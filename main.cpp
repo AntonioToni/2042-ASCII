@@ -2,6 +2,7 @@
 
 int main()
 {
+    ShowConsoleCursor(false);
     srand(time(0));
     Board b;
     b.zero();
