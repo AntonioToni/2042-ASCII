@@ -9,3 +9,6 @@ Terminal version of game 2048 made in C++
 3. Run the 2048.exe
 
 The code was made on windows and has not been tested for linux or macOS users.
+
+## Screenshots
+![image](https://user-images.githubusercontent.com/21955586/203455130-e98abd5b-53a7-43d9-9bfc-15514091bfe9.png)
