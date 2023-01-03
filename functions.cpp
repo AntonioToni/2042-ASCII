@@ -148,12 +148,12 @@ bool Board::checkingame()
     }
     if (cnt == 0)
     {
-        if (checkmove() == FALSE)
+        if (checkmove() == false)
         {
-            return FALSE;
+            return false;
         }
     }
-    return TRUE;
+    return true;
 }
 
 bool Board::checkmove()
@@ -166,28 +166,28 @@ bool Board::checkmove()
             {
                 if (matrix[i][j] == matrix[i-1][j] || matrix[i][j] == matrix[i][j-1] || matrix[i][j] == matrix[i+1][j] || matrix[i][j] == matrix[i][j+1])
                 {
-                    return TRUE;
+                    return true;
                 }
             }
         }
     }
     if (matrix[0][0] == matrix[1][0] != 0 || matrix[0][0] == matrix[0][1] != 0)
     {
-        return TRUE;
+        return true;
     }
     else if(matrix[3][0] == matrix[2][0] != 0 || matrix[3][0] == matrix[3][1] != 0)
     {
-        return TRUE;
+        return true;
     }
     else if(matrix[3][3] == matrix[2][3] != 0 || matrix[3][3] == matrix[3][2] != 0)
     {
-        return TRUE;
+        return true;
     }
     else if(matrix[0][3] == matrix[1][3] != 0 || matrix[0][3] == matrix[0][2] != 0)
     {
-        return TRUE;
+        return true;
     }
-    return FALSE;
+    return false;
 }
 
 bool Board::checkwinlose()
@@ -198,18 +198,18 @@ bool Board::checkwinlose()
         {
             if (matrix[i][j] == 2048)
             {
-                return TRUE;
+                return true;
             }
         }
     }
-    return FALSE;
+    return false;
 }
 
 bool Board::winscreen()
 {
-    if (end == TRUE)
+    if (end == true)
     {
-        return TRUE;
+        return true;
     }
     char ch;
     cout << endl << "\t Y O U    W I N" << endl << endl;
@@ -217,12 +217,12 @@ bool Board::winscreen()
     cin >> ch;
     if (ch == 'y')
     {
-        end = TRUE;
-        return TRUE;
+        end = true;
+        return true;
     }
     else
     {
-        return FALSE;
+        return false;
     }
 }
 
@@ -243,34 +243,34 @@ bool Board::checkmovepossible(char ch)
                 {
                     if (matrix[i][j] == matrix[i][j+1] || matrix[i][j+1] == 0)
                     {
-                        return TRUE;
+                        return true;
                     }
                 }
                 else if(ch == 'a' && j != 0)
                 {
                     if (matrix[i][j] == matrix[i][j-1] || matrix[i][j-1] == 0)
                     {
-                        return TRUE;
+                        return true;
                     }
                 }
                 else if(ch == 's' && i != 3)
                 {
                     if (matrix[i][j] == matrix[i+1][j] || matrix[i+1][j] == 0)
                     {
-                        return TRUE;
+                        return true;
                     }
                 }
                 else if(ch == 'w' && i != 0)
                 {
                     if (matrix[i][j] == matrix[i-1][j] || matrix[i-1][j] == 0)
                     {
-                        return TRUE;
+                        return true;
                     }
                 }
             }
         }
     }
-    return FALSE;
+    return false;
 }
 
 void Board::moveleft()

@@ -39,7 +39,7 @@ int main()
         if (b.checkwinlose())
         {
             b.print();
-            if (b.winscreen()==FALSE)
+            if (b.winscreen()==false)
             {
                 break;
             }

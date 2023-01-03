@@ -10,7 +10,7 @@ class Board
 {
     private:
         int score = 0;
-        int end = FALSE;
+        int end = false;
         int **matrix;
         bool ingame;
     public:
